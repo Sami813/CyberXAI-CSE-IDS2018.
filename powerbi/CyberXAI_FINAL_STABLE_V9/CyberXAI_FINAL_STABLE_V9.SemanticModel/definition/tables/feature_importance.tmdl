@@ -1,0 +1,143 @@
+table feature_importance
+	lineageTag: 14bf87f4-e8b0-4f6a-b2fd-136a18b999b4
+
+	measure 'Top SHAP Importance Live' = IF(MAX(feature_importance[shap_rank]) <= 10, MAX(feature_importance[shap_importance_normalised]))
+		formatString: 0.0%
+		lineageTag: b5c68b6f-9b58-4ee8-99bd-ea8fab59a965
+
+	measure 'Top Model Importance Feature' = MAXX(TOPN(1, ALL(feature_importance), feature_importance[native_rank], ASC), feature_importance[feature])
+		lineageTag: 0bde53a7-17bc-4daa-8380-7589a6ce167e
+
+	measure 'Top Permutation Feature' = MAXX(TOPN(1, ALL(feature_importance), feature_importance[permutation_rank], ASC), feature_importance[feature])
+		lineageTag: 5550e89d-7ec2-43ca-a882-a1beefad4b2c
+
+	measure 'Top SHAP Feature' = MAXX(TOPN(1, ALL(feature_importance), feature_importance[shap_rank], ASC), feature_importance[feature])
+		lineageTag: a9a4720a-7b5a-4155-abe6-4a4039385d4b
+
+	column feature
+		dataType: string
+		lineageTag: 878f1658-01c9-47c5-ab58-a0ae16aa3bc5
+		summarizeBy: none
+		sourceColumn: feature
+
+		annotation SummarizationSetBy = Automatic
+
+	column native_importance
+		dataType: double
+		lineageTag: a9950466-fdb8-4774-955e-885bd8ed6432
+		summarizeBy: sum
+		sourceColumn: native_importance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column native_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: efd8f9c8-4bc0-4c97-b214-44f333e03d11
+		summarizeBy: sum
+		sourceColumn: native_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column permutation_importance_mean
+		dataType: double
+		lineageTag: 3147c455-f200-45af-aec6-7a1c7e431fd4
+		summarizeBy: sum
+		sourceColumn: permutation_importance_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column permutation_importance_std
+		dataType: double
+		lineageTag: 77ea31ec-056e-4db4-a9df-7f3e3c4894ce
+		summarizeBy: sum
+		sourceColumn: permutation_importance_std
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column permutation_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 3538fb8c-fb87-4b77-a8ac-53dcf7892f1e
+		summarizeBy: sum
+		sourceColumn: permutation_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column mean_absolute_shap
+		dataType: double
+		lineageTag: c42e21c5-bbcc-40a8-837b-4b05107a2803
+		summarizeBy: sum
+		sourceColumn: mean_absolute_shap
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column shap_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: d1e8b52f-c27e-4058-92d8-90e0c06af095
+		summarizeBy: sum
+		sourceColumn: shap_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column native_importance_normalised
+		dataType: double
+		lineageTag: cc7bb10e-ea0e-4883-af42-28bc60dc8a1e
+		summarizeBy: sum
+		sourceColumn: native_importance_normalised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column permutation_importance_normalised
+		dataType: double
+		lineageTag: c12f0ee0-d86b-4b02-b951-1081e1c256ee
+		summarizeBy: sum
+		sourceColumn: permutation_importance_normalised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column shap_importance_normalised
+		dataType: double
+		lineageTag: 84f77221-5a96-45bb-adca-f555275974c5
+		summarizeBy: sum
+		sourceColumn: shap_importance_normalised
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column combined_rank
+		dataType: double
+		lineageTag: 0321c927-d332-45a3-a43f-239e792f3834
+		summarizeBy: sum
+		sourceColumn: combined_rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition feature_importance = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Sami Data Set\powerbi\feature_importance.csv"),[Delimiter=",", Columns=12, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"feature", type text}, {"native_importance", type number}, {"native_rank", Int64.Type}, {"permutation_importance_mean", type number}, {"permutation_importance_std", type number}, {"permutation_rank", Int64.Type}, {"mean_absolute_shap", type number}, {"shap_rank", Int64.Type}, {"native_importance_normalised", type number}, {"permutation_importance_normalised", type number}, {"shap_importance_normalised", type number}, {"combined_rank", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

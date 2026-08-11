@@ -1,0 +1,54 @@
+{
+    "selected_feature_set": "top_20",
+    "number_of_features": 20,
+    "features": [
+        "Fwd Packet Length Max",
+        "Init Bwd Win Bytes",
+        "Fwd Packet Length Std",
+        "Avg Fwd Segment Size",
+        "Init Fwd Win Bytes",
+        "Fwd Seg Size Min",
+        "Flow Duration",
+        "Flow IAT Max",
+        "Packet Length Variance",
+        "Subflow Fwd Bytes",
+        "Flow IAT Mean",
+        "Packet Length Mean",
+        "Packet Length Max",
+        "Avg Bwd Segment Size",
+        "Fwd IAT Std",
+        "Bwd Packet Length Std",
+        "Bwd Packet Length Max",
+        "Bwd Packets Length Total",
+        "Bwd IAT Min",
+        "RST Flag Count"
+    ],
+    "random_forest_parameters": {
+        "n_estimators": 80,
+        "max_depth": 20,
+        "min_samples_split": 10,
+        "min_samples_leaf": 3,
+        "max_features": "sqrt"
+    },
+    "xgboost_parameters": {
+        "n_estimators": 250,
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "min_child_weight": 2,
+        "subsample": 0.85,
+        "colsample_bytree": 0.85
+    },
+    "recommended_final_candidate": "Tuned XGBoost",
+    "selection_basis": [
+        "malicious_f1",
+        "malicious_recall",
+        "false_positive_rate",
+        "prediction_seconds"
+    ],
+    "tuning_training_records": 320000,
+    "tuning_validation_records": 80000,
+    "outer_validation_records": 100000,
+    "final_test_set_used": false,
+    "random_seed": 42,
+    "inner_random_seed": 142
+}

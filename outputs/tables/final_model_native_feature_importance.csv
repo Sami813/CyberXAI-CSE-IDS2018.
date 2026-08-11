@@ -1,0 +1,21 @@
+feature,native_importance,native_rank
+Fwd Seg Size Min,0.16009054,1
+Bwd IAT Min,0.15498468,2
+RST Flag Count,0.10504594,3
+Flow Duration,0.09598925,4
+Fwd IAT Std,0.07188603,5
+Init Fwd Win Bytes,0.06722705,6
+Bwd Packet Length Std,0.059036177,7
+Packet Length Max,0.053593718,8
+Init Bwd Win Bytes,0.05286307,9
+Packet Length Mean,0.034173813,10
+Bwd Packets Length Total,0.022939539,11
+Subflow Fwd Bytes,0.022126017,12
+Flow IAT Max,0.021078048,13
+Fwd Packet Length Max,0.01939441,14
+Bwd Packet Length Max,0.0143404,15
+Flow IAT Mean,0.012433318,16
+Avg Fwd Segment Size,0.012392063,17
+Avg Bwd Segment Size,0.00963534,18
+Fwd Packet Length Std,0.006796482,19
+Packet Length Variance,0.0039741634,20

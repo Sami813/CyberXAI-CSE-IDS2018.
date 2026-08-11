@@ -1,0 +1,13 @@
+feature_set,actual_class,predicted_class,count
+top_10,Benign,Benign,57708
+top_10,Benign,Malicious,22340
+top_10,Malicious,Benign,4153
+top_10,Malicious,Malicious,15799
+top_15,Benign,Benign,57749
+top_15,Benign,Malicious,22299
+top_15,Malicious,Benign,1611
+top_15,Malicious,Malicious,18341
+top_20,Benign,Benign,66712
+top_20,Benign,Malicious,13336
+top_20,Malicious,Benign,1248
+top_20,Malicious,Malicious,18704

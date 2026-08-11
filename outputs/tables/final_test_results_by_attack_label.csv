@@ -1,0 +1,16 @@
+original_attack_label,total_records,actual_malicious,predicted_malicious,correct_predictions,true_positives,false_negatives,false_positives,true_negatives,traffic_type,accuracy,attack_detection_rate,benign_false_alarm_rate
+DDoS attacks-LOIC-HTTP,115073,115073,115071,115071,115071,2,0,0,Malicious,0.9999826197283463,0.9999826197283463,
+DDOS attack-HOIC,39772,39772,39772,39772,39772,0,0,0,Malicious,1.0,1.0,
+DoS attacks-Hulk,29045,29045,29045,29045,29045,0,0,0,Malicious,1.0,1.0,
+Bot,28907,28907,28746,28746,28746,161,0,0,Malicious,0.9944304147784274,0.9944304147784274,
+Infilteration,23697,23697,2536,2536,2536,21161,0,0,Malicious,0.10701776596193611,0.10701776596193611,
+SSH-Bruteforce,18810,18810,18810,18810,18810,0,0,0,Malicious,1.0,1.0,
+DoS attacks-GoldenEye,8283,8283,8282,8282,8282,1,0,0,Malicious,0.9998792707956055,0.9998792707956055,
+DoS attacks-Slowloris,1980,1980,1967,1967,1967,13,0,0,Malicious,0.9934343434343434,0.9934343434343434,
+DDOS attack-LOIC-UDP,346,346,346,346,346,0,0,0,Malicious,1.0,1.0,
+Brute Force -Web,115,115,69,69,69,46,0,0,Malicious,0.6,0.6,
+Brute Force -XSS,41,41,40,40,40,1,0,0,Malicious,0.975609756097561,0.975609756097561,
+SQL Injection,20,20,19,19,19,1,0,0,Malicious,0.95,0.95,
+FTP-BruteForce,10,10,10,10,10,0,0,0,Malicious,1.0,1.0,
+DoS attacks-SlowHTTPTest,6,6,6,6,6,0,0,0,Malicious,1.0,1.0,
+Benign,1065802,0,5202,1060600,0,0,5202,1060600,Benign,0.9951191684759458,,0.004880831524054187

@@ -1,0 +1,11 @@
+source_file_id,source_file_name,processed_file_name,rows_before,rows_after,columns_before,columns_after,missing_values_removed,infinite_values_removed,duplicates_removed,benign_records,malicious_records,status,error
+1,Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet,Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter_processed.parquet,771587,771587,78,81,0,0,0,627052,144535,Completed,
+2,Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter.parquet,Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter_processed.parquet,619346,619346,78,81,0,0,0,525245,94101,Completed,
+3,DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet,DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter_processed.parquet,954846,954846,78,81,0,0,0,379482,575364,Completed,
+4,DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet,DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter_processed.parquet,561396,561396,78,81,0,0,0,360805,200591,Completed,
+5,DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter.parquet,DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter_processed.parquet,794812,794812,78,81,0,0,0,743498,51314,Completed,
+6,DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter.parquet,DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter_processed.parquet,591873,591873,78,81,0,0,0,446619,145254,Completed,
+7,Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet,Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter_processed.parquet,456873,456873,78,81,0,0,0,400424,56449,Completed,
+8,Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet,Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter_processed.parquet,249170,249170,78,81,0,0,0,187136,62034,Completed,
+9,Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet,Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter_processed.parquet,830224,830224,78,81,0,0,0,829883,341,Completed,
+10,Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet,Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter_processed.parquet,829405,829405,78,81,0,0,0,828864,541,Completed,

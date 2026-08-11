@@ -1,0 +1,139 @@
+table performance_by_attack_label
+	lineageTag: 401f2030-d037-4fcd-bafb-7325161ce07c
+
+	measure 'Attack Detection Rate Live' = IF(SELECTEDVALUE(performance_by_attack_label[traffic_type]) = "Malicious" && MAX(performance_by_attack_label[total_records]) >= 20, MAX(performance_by_attack_label[attack_detection_rate]))
+		formatString: 0.0%
+		lineageTag: fd5aa864-1375-4e4d-9d73-c553fb4a99a3
+
+	measure 'False Negatives Live' = IF(SELECTEDVALUE(performance_by_attack_label[traffic_type]) = "Malicious" && SUM(performance_by_attack_label[false_negatives]) > 0, SUM(performance_by_attack_label[false_negatives]))
+		formatString: #,0
+		lineageTag: e93582f3-4b27-4cb2-9420-3a35b4bfc735
+
+	column original_attack_label
+		dataType: string
+		lineageTag: a9b64292-3f09-46f1-a8fe-3e9d68b3d271
+		summarizeBy: none
+		sourceColumn: original_attack_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_records
+		dataType: int64
+		formatString: 0
+		lineageTag: c6b33b82-422c-42d1-ab0a-76eeffb55aa4
+		summarizeBy: sum
+		sourceColumn: total_records
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_malicious
+		dataType: int64
+		formatString: 0
+		lineageTag: 163e4061-d2d8-42a6-9f9e-1263ee767fe2
+		summarizeBy: sum
+		sourceColumn: actual_malicious
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_malicious
+		dataType: int64
+		formatString: 0
+		lineageTag: 065355e6-7340-4ffb-a1bb-f14da885dedf
+		summarizeBy: sum
+		sourceColumn: predicted_malicious
+
+		annotation SummarizationSetBy = Automatic
+
+	column correct_predictions
+		dataType: int64
+		formatString: 0
+		lineageTag: d4b006de-4c88-4fa3-a8ba-b891b786ea37
+		summarizeBy: sum
+		sourceColumn: correct_predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: 1128c5bd-4a3a-4336-b741-a197d9b37d4a
+		summarizeBy: sum
+		sourceColumn: true_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_negatives
+		dataType: int64
+		formatString: 0
+		lineageTag: ff185965-94d3-4fb9-a0b8-a050db99e914
+		summarizeBy: sum
+		sourceColumn: false_negatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: b64bb05e-3924-40c1-8300-03e2c27f552d
+		summarizeBy: sum
+		sourceColumn: false_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_negatives
+		dataType: int64
+		formatString: 0
+		lineageTag: edf43875-a2eb-478f-af98-47d0d3c6e9bf
+		summarizeBy: sum
+		sourceColumn: true_negatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column traffic_type
+		dataType: string
+		lineageTag: a98c99a9-7aaa-44f1-9ec2-dc4afd9ef71c
+		summarizeBy: none
+		sourceColumn: traffic_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column accuracy
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 785a57f1-c2d0-4ff8-a25b-62ba8d911af8
+		summarizeBy: sum
+		sourceColumn: accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column attack_detection_rate
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 89f7cf87-65b0-4d49-ae60-192e614165c6
+		summarizeBy: sum
+		sourceColumn: attack_detection_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column benign_false_alarm_rate
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 59c6a8ee-a48e-4bf6-914b-8c603b197937
+		summarizeBy: sum
+		sourceColumn: benign_false_alarm_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition performance_by_attack_label = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Sami Data Set\powerbi\performance_by_attack_label.csv"),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"original_attack_label", type text}, {"total_records", Int64.Type}, {"actual_malicious", Int64.Type}, {"predicted_malicious", Int64.Type}, {"correct_predictions", Int64.Type}, {"true_positives", Int64.Type}, {"false_negatives", Int64.Type}, {"false_positives", Int64.Type}, {"true_negatives", Int64.Type}, {"traffic_type", type text}, {"accuracy", type number}, {"attack_detection_rate", type number}, {"benign_false_alarm_rate", type number}}),
+				    #"Clean Attack Label" = Table.ReplaceValue(#"Changed Type","Infilteration","Infiltration",Replacer.ReplaceText,{"original_attack_label"})
+				in
+				    #"Clean Attack Label"
+
+	annotation PBI_ResultType = Table
+

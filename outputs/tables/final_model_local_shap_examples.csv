@@ -1,0 +1,31 @@
+prediction_result,feature,feature_value,shap_contribution,absolute_shap_contribution,actual_label,predicted_label,malicious_probability,original_attack_label
+True Positive,RST Flag Count,1.0,2.807172,2.807172,1,1,0.9993829727172852,Bot
+True Positive,Fwd IAT Std,562.857,0.77997357,0.77997357,1,1,0.9993829727172852,Bot
+True Positive,Bwd IAT Min,72.0,0.5218052,0.5218052,1,1,0.9993829727172852,Bot
+True Positive,Subflow Fwd Bytes,326.0,0.50544125,0.50544125,1,1,0.9993829727172852,Bot
+True Positive,Avg Bwd Segment Size,32.25,0.47201446,0.47201446,1,1,0.9993829727172852,Bot
+True Positive,Flow Duration,10907.0,0.45616704,0.45616704,1,1,0.9993829727172852,Bot
+True Positive,Flow IAT Mean,1817.8334,0.4294753,0.4294753,1,1,0.9993829727172852,Bot
+True Positive,Init Bwd Win Bytes,219.0,0.32978162,0.32978162,1,1,0.9993829727172852,Bot
+True Positive,Bwd Packet Length Max,112.0,0.22299011,0.22299011,1,1,0.9993829727172852,Bot
+True Positive,Fwd Packet Length Max,326.0,0.20207223,0.20207223,1,1,0.9993829727172852,Bot
+False Positive,RST Flag Count,1.0,0.9444666,0.9444666,0,1,0.5259711742401123,Benign
+False Positive,Fwd IAT Std,2.1241778e+06,-0.8381505,0.8381505,0,1,0.5259711742401123,Benign
+False Positive,Flow IAT Mean,4.5134525e+06,-0.3141985,0.3141985,0,1,0.5259711742401123,Benign
+False Positive,Subflow Fwd Bytes,0.0,0.2855062,0.2855062,0,1,0.5259711742401123,Benign
+False Positive,Bwd IAT Min,0.0,0.24199754,0.24199754,0,1,0.5259711742401123,Benign
+False Positive,Packet Length Max,0.0,-0.23716202,0.23716202,0,1,0.5259711742401123,Benign
+False Positive,Fwd Packet Length Max,0.0,0.23140883,0.23140883,0,1,0.5259711742401123,Benign
+False Positive,Flow IAT Max,6.015473e+06,0.18245077,0.18245077,0,1,0.5259711742401123,Benign
+False Positive,Init Bwd Win Bytes,-1.0,-0.17685214,0.17685214,0,1,0.5259711742401123,Benign
+False Positive,Init Fwd Win Bytes,8192.0,-0.1650611,0.1650611,0,1,0.5259711742401123,Benign
+False Negative,Init Fwd Win Bytes,-1.0,-0.92348284,0.92348284,1,0,0.10481295734643936,Infilteration
+False Negative,Fwd Seg Size Min,8.0,-0.5030004,0.5030004,1,0,0.10481295734643936,Infilteration
+False Negative,RST Flag Count,0.0,-0.40912122,0.40912122,1,0,0.10481295734643936,Infilteration
+False Negative,Init Bwd Win Bytes,-1.0,-0.3822684,0.3822684,1,0,0.10481295734643936,Infilteration
+False Negative,Flow Duration,1359.0,-0.24153689,0.24153689,1,0,0.10481295734643936,Infilteration
+False Negative,Flow IAT Mean,1359.0,0.13725936,0.13725936,1,0,0.10481295734643936,Infilteration
+False Negative,Packet Length Max,166.0,-0.12246931,0.12246931,1,0,0.10481295734643936,Infilteration
+False Negative,Fwd IAT Std,0.0,0.11932027,0.11932027,1,0,0.10481295734643936,Infilteration
+False Negative,Fwd Packet Length Max,84.0,-0.09392083,0.09392083,1,0,0.10481295734643936,Infilteration
+False Negative,Bwd IAT Min,0.0,0.092854336,0.092854336,1,0,0.10481295734643936,Infilteration

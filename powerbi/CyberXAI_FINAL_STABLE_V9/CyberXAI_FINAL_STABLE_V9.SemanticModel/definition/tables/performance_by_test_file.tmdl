@@ -1,0 +1,114 @@
+table performance_by_test_file
+	lineageTag: aed3c35f-c1f9-4f8e-8f23-15f2ac581b2e
+
+	column test_file
+		dataType: string
+		lineageTag: 29000ea0-5527-471c-8557-8a446d1b798b
+		summarizeBy: none
+		sourceColumn: test_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column records
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e40bf9e-15c3-4a68-86c4-37aaa212b72f
+		summarizeBy: sum
+		sourceColumn: records
+
+		annotation SummarizationSetBy = Automatic
+
+	column accuracy
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 673d70fc-b39c-41ad-ba11-97e97a3aec2a
+		summarizeBy: sum
+		sourceColumn: accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column malicious_precision
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 495bdc81-e1b4-4da7-b7e8-c5b72639c728
+		summarizeBy: sum
+		sourceColumn: malicious_precision
+
+		annotation SummarizationSetBy = Automatic
+
+	column malicious_recall
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 41542453-9494-443a-a9f8-0e894c64eade
+		summarizeBy: sum
+		sourceColumn: malicious_recall
+
+		annotation SummarizationSetBy = Automatic
+
+	column malicious_f1
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 0e2912dd-346a-480c-89c5-f6ca18a3b3c2
+		summarizeBy: sum
+		sourceColumn: malicious_f1
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_negatives
+		dataType: int64
+		formatString: 0
+		lineageTag: dfe29f89-3101-4699-b9b3-8ffec5f9e045
+		summarizeBy: sum
+		sourceColumn: true_negatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: 7721bc15-ac25-49d7-aedd-1f2703f0f6ad
+		summarizeBy: sum
+		sourceColumn: false_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_negatives
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e77d205-81e4-4827-93cf-fb32938a1027
+		summarizeBy: sum
+		sourceColumn: false_negatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: 0554b6ad-27cf-4ddd-b958-65ef8d646ee2
+		summarizeBy: sum
+		sourceColumn: true_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column prediction_seconds
+		dataType: double
+		lineageTag: edb0a419-b129-413f-b393-21485ba80ee8
+		summarizeBy: sum
+		sourceColumn: prediction_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition performance_by_test_file = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Sami Data Set\powerbi\performance_by_test_file.csv"),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"test_file", type text}, {"records", Int64.Type}, {"accuracy", type number}, {"malicious_precision", type number}, {"malicious_recall", type number}, {"malicious_f1", type number}, {"true_negatives", Int64.Type}, {"false_positives", Int64.Type}, {"false_negatives", Int64.Type}, {"true_positives", Int64.Type}, {"prediction_seconds", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

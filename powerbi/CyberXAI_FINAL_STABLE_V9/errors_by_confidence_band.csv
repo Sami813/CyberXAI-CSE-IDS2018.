@@ -1,0 +1,11 @@
+error_type,confidence_band,error_count
+False Negative,50–59%,1045
+False Negative,60–69%,3671
+False Negative,70–79%,4203
+False Negative,80–89%,8336
+False Negative,90–100%,4131
+False Positive,50–59%,2892
+False Positive,60–69%,1153
+False Positive,70–79%,772
+False Positive,80–89%,332
+False Positive,90–100%,53

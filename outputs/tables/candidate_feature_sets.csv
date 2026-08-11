@@ -1,0 +1,21 @@
+position,top_10,top_15,top_20
+1,Fwd Packet Length Max,Fwd Packet Length Max,Fwd Packet Length Max
+2,Init Bwd Win Bytes,Init Bwd Win Bytes,Init Bwd Win Bytes
+3,Fwd Packet Length Std,Fwd Packet Length Std,Fwd Packet Length Std
+4,Avg Fwd Segment Size,Avg Fwd Segment Size,Avg Fwd Segment Size
+5,Init Fwd Win Bytes,Init Fwd Win Bytes,Init Fwd Win Bytes
+6,Fwd Seg Size Min,Fwd Seg Size Min,Fwd Seg Size Min
+7,Flow Duration,Flow Duration,Flow Duration
+8,Flow IAT Max,Flow IAT Max,Flow IAT Max
+9,Packet Length Variance,Packet Length Variance,Packet Length Variance
+10,Subflow Fwd Bytes,Subflow Fwd Bytes,Subflow Fwd Bytes
+11,,Flow IAT Mean,Flow IAT Mean
+12,,Packet Length Mean,Packet Length Mean
+13,,Packet Length Max,Packet Length Max
+14,,Avg Bwd Segment Size,Avg Bwd Segment Size
+15,,Fwd IAT Std,Fwd IAT Std
+16,,,Bwd Packet Length Std
+17,,,Bwd Packet Length Max
+18,,,Bwd Packets Length Total
+19,,,Bwd IAT Min
+20,,,RST Flag Count

@@ -1,0 +1,11 @@
+file_name,rows_loaded,loading_seconds
+Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter_train.parquet,617270,0.319
+Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter_train.parquet,495477,0.202
+DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter_train.parquet,763877,0.26
+DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter_train.parquet,449117,0.163
+DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter_train.parquet,635849,0.244
+DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter_train.parquet,473498,0.213
+Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter_train.parquet,365498,0.154
+Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter_train.parquet,199336,0.098
+Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter_train.parquet,664179,0.749
+Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter_train.parquet,663524,0.378

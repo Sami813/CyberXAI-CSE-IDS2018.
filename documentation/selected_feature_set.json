@@ -1,0 +1,30 @@
+{
+    "selected_feature_set": "top_20",
+    "number_of_features": 20,
+    "features": [
+        "Fwd Packet Length Max",
+        "Init Bwd Win Bytes",
+        "Fwd Packet Length Std",
+        "Avg Fwd Segment Size",
+        "Init Fwd Win Bytes",
+        "Fwd Seg Size Min",
+        "Flow Duration",
+        "Flow IAT Max",
+        "Packet Length Variance",
+        "Subflow Fwd Bytes",
+        "Flow IAT Mean",
+        "Packet Length Mean",
+        "Packet Length Max",
+        "Avg Bwd Segment Size",
+        "Fwd IAT Std",
+        "Bwd Packet Length Std",
+        "Bwd Packet Length Max",
+        "Bwd Packets Length Total",
+        "Bwd IAT Min",
+        "RST Flag Count"
+    ],
+    "selection_method": "Highest malicious-class F1-score, followed by recall, false-positive rate and feature count",
+    "validation_source": "Training-data-only validation sample",
+    "final_test_set_used": false,
+    "random_seed": 42
+}

@@ -1,0 +1,79 @@
+position,column_name,parquet_type,is_label
+1,Protocol,int8,False
+2,Flow Duration,int32,False
+3,Total Fwd Packets,int32,False
+4,Total Backward Packets,int32,False
+5,Fwd Packets Length Total,int32,False
+6,Bwd Packets Length Total,float,False
+7,Fwd Packet Length Max,int16,False
+8,Fwd Packet Length Min,int16,False
+9,Fwd Packet Length Mean,float,False
+10,Fwd Packet Length Std,float,False
+11,Bwd Packet Length Max,int16,False
+12,Bwd Packet Length Min,int16,False
+13,Bwd Packet Length Mean,float,False
+14,Bwd Packet Length Std,float,False
+15,Flow Bytes/s,double,False
+16,Flow Packets/s,double,False
+17,Flow IAT Mean,float,False
+18,Flow IAT Std,float,False
+19,Flow IAT Max,float,False
+20,Flow IAT Min,float,False
+21,Fwd IAT Total,float,False
+22,Fwd IAT Mean,float,False
+23,Fwd IAT Std,float,False
+24,Fwd IAT Max,float,False
+25,Fwd IAT Min,float,False
+26,Bwd IAT Total,float,False
+27,Bwd IAT Mean,float,False
+28,Bwd IAT Std,float,False
+29,Bwd IAT Max,float,False
+30,Bwd IAT Min,float,False
+31,Fwd PSH Flags,int8,False
+32,Bwd PSH Flags,int8,False
+33,Fwd URG Flags,int8,False
+34,Bwd URG Flags,int8,False
+35,Fwd Header Length,int32,False
+36,Bwd Header Length,int32,False
+37,Fwd Packets/s,float,False
+38,Bwd Packets/s,float,False
+39,Packet Length Min,int16,False
+40,Packet Length Max,int16,False
+41,Packet Length Mean,float,False
+42,Packet Length Std,float,False
+43,Packet Length Variance,float,False
+44,FIN Flag Count,int8,False
+45,SYN Flag Count,int8,False
+46,RST Flag Count,int8,False
+47,PSH Flag Count,int8,False
+48,ACK Flag Count,int8,False
+49,URG Flag Count,int8,False
+50,CWE Flag Count,int8,False
+51,ECE Flag Count,int8,False
+52,Down/Up Ratio,int16,False
+53,Avg Packet Size,float,False
+54,Avg Fwd Segment Size,float,False
+55,Avg Bwd Segment Size,float,False
+56,Fwd Avg Bytes/Bulk,int8,False
+57,Fwd Avg Packets/Bulk,int8,False
+58,Fwd Avg Bulk Rate,int8,False
+59,Bwd Avg Bytes/Bulk,int8,False
+60,Bwd Avg Packets/Bulk,int8,False
+61,Bwd Avg Bulk Rate,int8,False
+62,Subflow Fwd Packets,int32,False
+63,Subflow Fwd Bytes,int32,False
+64,Subflow Bwd Packets,int32,False
+65,Subflow Bwd Bytes,int32,False
+66,Init Fwd Win Bytes,int32,False
+67,Init Bwd Win Bytes,int32,False
+68,Fwd Act Data Packets,int16,False
+69,Fwd Seg Size Min,int8,False
+70,Active Mean,float,False
+71,Active Std,float,False
+72,Active Max,float,False
+73,Active Min,float,False
+74,Idle Mean,float,False
+75,Idle Std,float,False
+76,Idle Max,float,False
+77,Idle Min,float,False
+78,Label,"dictionary<values=string, indices=int8, ordered=0>",True

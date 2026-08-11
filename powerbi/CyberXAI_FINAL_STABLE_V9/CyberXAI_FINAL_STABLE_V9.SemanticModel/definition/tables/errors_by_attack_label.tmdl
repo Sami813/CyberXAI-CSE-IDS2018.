@@ -1,0 +1,79 @@
+table errors_by_attack_label
+	lineageTag: 22eb2e87-54ce-4fa5-9a4b-93f71ac95a5a
+
+	measure 'False Negative Errors' = CALCULATE(SUM(errors_by_attack_label[error_count]), errors_by_attack_label[error_type] = "False Negative")
+		formatString: #,0
+		lineageTag: 4d47d847-cd81-4f04-b4ce-dfffea61df13
+
+	measure 'False Positive Errors' = CALCULATE(SUM(errors_by_attack_label[error_count]), errors_by_attack_label[error_type] = "False Positive")
+		formatString: #,0
+		lineageTag: 5ed2f6f6-e87f-4224-b8e3-596b7e318ea6
+
+	measure 'Major False Negative Errors' =
+			VAR v = CALCULATE(SUM(errors_by_attack_label[error_count]), errors_by_attack_label[error_type] = "False Negative")
+			RETURN IF(v >= 10, v)
+			formatString: #,0
+		lineageTag: 7842cbcd-8842-4235-9a19-f2ff02f88588
+
+	measure 'Major False Positive Errors' =
+			VAR v = CALCULATE(SUM(errors_by_attack_label[error_count]), errors_by_attack_label[error_type] = "False Positive")
+			RETURN IF(v >= 10, v)
+			formatString: #,0
+		lineageTag: ce61d4a3-51a3-4132-8bd2-f0f385557949
+
+	column original_attack_label
+		dataType: string
+		lineageTag: 00363fac-7ebe-45b4-a0f3-4ead708f4c14
+		summarizeBy: none
+		sourceColumn: original_attack_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_type
+		dataType: string
+		lineageTag: d19a9505-76ed-45b6-a89a-90d69356d011
+		summarizeBy: none
+		sourceColumn: error_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 95f73d10-d91d-4b43-91c9-e814e6a0f8f9
+		summarizeBy: sum
+		sourceColumn: error_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column mean_malicious_probability
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 4aff969a-ae20-4666-8742-c5f8dbdd4e35
+		summarizeBy: sum
+		sourceColumn: mean_malicious_probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column mean_prediction_confidence
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 3546bf3d-df3b-440f-aaa5-adacfb3ee3a7
+		summarizeBy: sum
+		sourceColumn: mean_prediction_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+	partition errors_by_attack_label = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Sami Data Set\powerbi\errors_by_attack_label.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"original_attack_label", type text}, {"error_type", type text}, {"error_count", Int64.Type}, {"mean_malicious_probability", type number}, {"mean_prediction_confidence", type number}}),
+				    #"Clean Attack Label" = Table.ReplaceValue(#"Changed Type","Infilteration","Infiltration",Replacer.ReplaceText,{"original_attack_label"})
+				in
+				    #"Clean Attack Label"
+
+	annotation PBI_ResultType = Table
+

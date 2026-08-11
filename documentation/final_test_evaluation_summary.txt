@@ -1,0 +1,18 @@
+Final Model Evaluation Summary
+
+The final XGBoost model was trained using
+5,327,625 records and 20
+selected network-flow features. It was evaluated once on the
+untouched test partition containing 1,331,907 records.
+
+The model achieved an accuracy of 0.9800,
+malicious-class precision of 0.9792, recall of
+0.9196, and F1-score of 0.9485. Its ROC-AUC
+was 0.9882, while average precision was
+0.9746.
+
+The final confusion matrix contained 1,060,600 true
+negatives, 5,202 false positives, 21,386 false
+negatives, and 244,719 true positives. No model,
+feature-selection or threshold changes were made after the test
+results were observed.

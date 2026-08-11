@@ -1,0 +1,20 @@
+IMPORTANT — OPEN THE NEW LAVISH VERSION
+
+Open ONLY:
+    CyberXAI_LAVISH_FINAL_V2.pbip
+
+Do NOT open any older file named:
+    Cybersecurity_Threat_Detection_Dashboard_LIVE.pbip
+
+How to verify you opened the NEW version:
+- A left-side navigation panel must be visible inside the report canvas.
+- A dark navy footer bar must be visible across the bottom.
+- The top-right of the header shows FINAL TEST / CSE-CIC-IDS2018, not the old CYBERXAI block.
+- The report has 3 pages:
+  Model Overview
+  Attack Analysis
+  Explainability & Errors
+
+If Power BI asks to refresh, click Refresh now.
+CSV source folder:
+    D:\Sami Data Set\powerbi\

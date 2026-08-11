@@ -1,0 +1,2 @@
+model,records_evaluated,number_of_features,classification_threshold,accuracy,malicious_precision,malicious_recall,malicious_f1,roc_auc,average_precision,false_positive_rate,false_negative_rate,true_negatives,false_positives,false_negatives,true_positives,training_seconds,test_prediction_seconds
+XGBoost,1331907,20,0.5,0.9800376452710288,0.9791854225935396,0.9196332274853912,0.9484754644145836,0.9882080536531404,0.9746388268807544,0.0048808315240541,0.0803667725146089,1060600,5202,21386,244719,392.815,19.752

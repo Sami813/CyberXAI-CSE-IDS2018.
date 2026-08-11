@@ -1,0 +1,11 @@
+train_file,test_file,overlapping_rows
+Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter_train.parquet,Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter_test.parquet,0
+Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter_train.parquet,Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter_test.parquet,0
+DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter_train.parquet,DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter_test.parquet,0
+DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter_train.parquet,DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter_test.parquet,0
+DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter_train.parquet,DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter_test.parquet,0
+DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter_train.parquet,DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter_test.parquet,0
+Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter_train.parquet,Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter_test.parquet,0
+Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter_train.parquet,Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter_test.parquet,0
+Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter_train.parquet,Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter_test.parquet,0
+Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter_train.parquet,Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter_test.parquet,0

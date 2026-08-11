@@ -1,0 +1,5 @@
+actual_class,predicted_class,classification_result,count
+Benign,Benign,True Negative,1060600
+Benign,Malicious,False Positive,5202
+Malicious,Benign,False Negative,21386
+Malicious,Malicious,True Positive,244719

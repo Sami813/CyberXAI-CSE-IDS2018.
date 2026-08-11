@@ -1,0 +1,10 @@
+original_attack_label,error_type,error_count,mean_malicious_probability,mean_prediction_confidence
+Benign,False Positive,5202,0.6173872,0.6173872
+Bot,False Negative,161,0.2827688,0.71723115
+Brute Force -Web,False Negative,46,0.19043532,0.80956465
+Brute Force -XSS,False Negative,1,0.12720366,0.87279636
+DDoS attacks-LOIC-HTTP,False Negative,2,0.47186244,0.52813756
+DoS attacks-GoldenEye,False Negative,1,0.21344607,0.7865539
+DoS attacks-Slowloris,False Negative,13,0.30382735,0.69617265
+Infilteration,False Negative,21161,0.1996843,0.8003157
+SQL Injection,False Negative,1,0.3905123,0.6094877

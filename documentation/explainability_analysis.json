@@ -1,0 +1,13 @@
+{
+    "final_algorithm": "XGBoost",
+    "selected_feature_count": 20,
+    "explanation_sample_records": 45176,
+    "permutation_sample_records": 20000,
+    "permutation_repeats": 3,
+    "shap_completed": true,
+    "shap_sample_records": 2000,
+    "explanation_purpose": "Post-test interpretation and error analysis only",
+    "model_changes_after_test": false,
+    "threshold_changes_after_test": false,
+    "powerbi_output_directory": "D:\\Sami Data Set\\powerbi"
+}

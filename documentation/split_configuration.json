@@ -1,0 +1,8 @@
+{
+    "split_method": "Stratified random split within each source file",
+    "training_proportion": 0.8,
+    "testing_proportion": 0.2,
+    "random_seed": 42,
+    "stratification_variable": "binary_label",
+    "test_set_status": "Frozen and excluded from feature selection, scaling, balancing and tuning"
+}

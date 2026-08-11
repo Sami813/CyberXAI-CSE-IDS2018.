@@ -1,0 +1,255 @@
+table model_summary
+	lineageTag: 1bc70d39-aca7-4966-bec7-50923d620aa1
+
+	measure 'Accuracy Display' = FORMAT(MAX(model_summary[accuracy]), "0.00%")
+		lineageTag: bd730ef5-7f29-4cfe-9dfd-5391ccaf9474
+
+	measure 'Precision Display' = FORMAT(MAX(model_summary[malicious_precision]), "0.00%")
+		lineageTag: a6da2ee9-2a1e-4dfa-b83a-327f72808d61
+
+	measure 'Recall Display' = FORMAT(MAX(model_summary[malicious_recall]), "0.00%")
+		lineageTag: f6faf7e0-7c63-4235-a43a-91334e4bec18
+
+	measure 'F1 Display' = FORMAT(MAX(model_summary[malicious_f1]), "0.00%")
+		lineageTag: 97e59ded-1e3a-40c7-894f-e73cde38dc14
+
+	measure 'ROC AUC Display' = FORMAT(MAX(model_summary[roc_auc]), "0.00%")
+		lineageTag: 2ccfe58b-8c0b-4d17-9c33-186c3ab19e00
+
+	measure 'Test Records Display' = FORMAT(MAX(model_summary[records_evaluated]), "#,0")
+		lineageTag: 04e6b3ac-087f-41d1-91ab-3a41eb73173b
+
+	measure 'TN Display' = FORMAT(MAX(model_summary[true_negatives]), "#,0")
+		lineageTag: 18d3ccea-bed6-4206-a6ff-528f5cf1089a
+
+	measure 'FP Display' = FORMAT(MAX(model_summary[false_positives]), "#,0")
+		lineageTag: be8dcffe-a74e-4d07-bc4b-6399d93099a3
+
+	measure 'FN Display' = FORMAT(MAX(model_summary[false_negatives]), "#,0")
+		lineageTag: ccd75ea9-634f-442e-9325-1dad4fdb5445
+
+	measure 'TP Display' = FORMAT(MAX(model_summary[true_positives]), "#,0")
+		lineageTag: 3dd2c222-b261-41ee-9a84-5650c57f3997
+
+	measure 'Malicious Flows Display' = FORMAT(MAX(model_summary[true_positives]) + MAX(model_summary[false_negatives]), "#,0")
+		lineageTag: 436ca2e4-5b2a-4d20-ab14-cddac7fec64d
+
+	measure 'Average Precision Display' = FORMAT(MAX(model_summary[average_precision]), "0.00%")
+		lineageTag: 92795868-020a-4c63-a225-4576c738f34b
+
+	measure 'FNR Display' = FORMAT(MAX(model_summary[false_negative_rate]), "0.00%")
+		lineageTag: eef64ed1-628e-4e71-9443-5922fddd6b69
+
+	measure 'FPR Display' = FORMAT(MAX(model_summary[false_positive_rate]), "0.00%")
+		lineageTag: dc69c1e3-4b30-41f4-9745-46ec6a2081cb
+
+	measure 'Total Errors Display' = FORMAT(MAX(model_summary[false_positives]) + MAX(model_summary[false_negatives]), "#,0")
+		lineageTag: bf2bc0bf-1a73-4886-adc3-db13a34d3fa7
+
+	measure 'Training Time Display' = FORMAT(MAX(model_summary[training_seconds]), "0.00") & " s"
+		lineageTag: fd6ae855-a2d0-4e25-8c46-789a20956a10
+
+	measure 'Prediction Time Display' = FORMAT(MAX(model_summary[test_prediction_seconds]), "0.00") & " s"
+		lineageTag: 92b63f4f-f34a-4f45-bc97-204b56da8890
+
+	measure 'Algorithm Display' = SELECTEDVALUE(model_summary[model], "XGBoost")
+		lineageTag: 8d426b69-1de8-4e0e-8c25-539e1ee0efad
+
+	measure 'Features Display' = FORMAT(MAX(model_summary[number_of_features]), "0")
+		lineageTag: 45b25a7f-8078-42ff-9047-e95037a8b23b
+
+	measure 'Threshold Display' = FORMAT(MAX(model_summary[classification_threshold]), "0.00")
+		lineageTag: 2053f954-e8e5-46d2-bf1f-955420bbb900
+
+	measure 'Training Records Display' = "5,327,625"
+		lineageTag: 41aca67e-832c-4e18-93ab-9c43bf7aafea
+
+	measure 'Testing Records Display' = FORMAT(MAX(model_summary[records_evaluated]), "#,0")
+		lineageTag: 909ec2ec-6356-4909-864f-c59df4c77c4a
+
+	measure 'Total Records Display' = "6,659,532"
+		lineageTag: b7b3105d-267e-43bc-a341-59c17ccdb402
+
+	column model
+		dataType: string
+		lineageTag: 60379e56-faf1-46dc-8b65-a7977a6606b0
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column records_evaluated
+		dataType: int64
+		formatString: 0
+		lineageTag: 818637e0-92fc-470e-8795-7499c36b3f2b
+		summarizeBy: sum
+		sourceColumn: records_evaluated
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_features
+		dataType: int64
+		formatString: 0
+		lineageTag: 09b1ec9b-7fc3-4b46-92d8-c76f52586aaa
+		summarizeBy: sum
+		sourceColumn: number_of_features
+
+		annotation SummarizationSetBy = Automatic
+
+	column classification_threshold
+		dataType: double
+		lineageTag: 1e9be00b-3b72-496d-937f-fd6ccfe02466
+		summarizeBy: sum
+		sourceColumn: classification_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accuracy
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: 21b99e33-b248-4fc6-977a-ba5e418d9158
+		summarizeBy: sum
+		sourceColumn: accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column malicious_precision
+		dataType: double
+		lineageTag: 90133962-e825-4a21-a2d4-11262dcb167e
+		summarizeBy: sum
+		sourceColumn: malicious_precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column malicious_recall
+		dataType: double
+		lineageTag: aef9a289-2530-4b7a-bb7e-5c371d4cbfc4
+		summarizeBy: sum
+		sourceColumn: malicious_recall
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column malicious_f1
+		dataType: double
+		lineageTag: f332434c-11b0-4812-b91c-b8a9ddd043e4
+		summarizeBy: sum
+		sourceColumn: malicious_f1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column roc_auc
+		dataType: double
+		lineageTag: 24b2008d-2baf-486a-8461-1faf175bb131
+		summarizeBy: sum
+		sourceColumn: roc_auc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column average_precision
+		dataType: double
+		lineageTag: 8c13e83c-d1bc-486b-a1a5-64eba8ebc68e
+		summarizeBy: sum
+		sourceColumn: average_precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column false_positive_rate
+		dataType: double
+		lineageTag: 8bb78f36-b8d7-4b08-ba03-dc701efb2bae
+		summarizeBy: sum
+		sourceColumn: false_positive_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column false_negative_rate
+		dataType: double
+		lineageTag: 7eaab448-1e8d-445a-b71f-6e2de1dab62f
+		summarizeBy: sum
+		sourceColumn: false_negative_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column true_negatives
+		dataType: int64
+		formatString: 0
+		lineageTag: 03fb7394-ebaf-4305-b7aa-f0c071488f40
+		summarizeBy: sum
+		sourceColumn: true_negatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: ff569d62-c9f3-4527-b1d9-aeb295144d40
+		summarizeBy: sum
+		sourceColumn: false_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_negatives
+		dataType: int64
+		formatString: 0
+		lineageTag: 9239cfa7-b9de-412a-b397-46c65d3babb2
+		summarizeBy: sum
+		sourceColumn: false_negatives
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: 9693ab25-dfe2-4d57-ada0-e830e5dca7ce
+		summarizeBy: sum
+		sourceColumn: true_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column training_seconds
+		dataType: double
+		lineageTag: d8020909-f45d-47fd-a864-0a2204aa77e3
+		summarizeBy: sum
+		sourceColumn: training_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_prediction_seconds
+		dataType: double
+		lineageTag: ccca1020-e544-4272-9c03-359040993024
+		summarizeBy: sum
+		sourceColumn: test_prediction_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition model_summary = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Sami Data Set\powerbi\model_summary.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"model", type text}, {"records_evaluated", Int64.Type}, {"number_of_features", Int64.Type}, {"classification_threshold", type number}, {"accuracy", type number}, {"malicious_precision", type number}, {"malicious_recall", type number}, {"malicious_f1", type number}, {"roc_auc", type number}, {"average_precision", type number}, {"false_positive_rate", type number}, {"false_negative_rate", type number}, {"true_negatives", Int64.Type}, {"false_positives", Int64.Type}, {"false_negatives", Int64.Type}, {"true_positives", Int64.Type}, {"training_seconds", type number}, {"test_prediction_seconds", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

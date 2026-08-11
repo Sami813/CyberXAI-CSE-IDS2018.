@@ -1,0 +1,29 @@
+file_name,original_attack_label,count
+Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet,Benign,627052
+Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet,Bot,144535
+Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,525245
+Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter.parquet,SSH-Bruteforce,94048
+Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter.parquet,FTP-BruteForce,53
+DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet,DDoS attacks-LOIC-HTTP,575364
+DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,379482
+DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,360805
+DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet,DDOS attack-HOIC,198861
+DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet,DDOS attack-LOIC-UDP,1730
+DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,743498
+DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter.parquet,DoS attacks-GoldenEye,41406
+DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter.parquet,DoS attacks-Slowloris,9908
+DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,446619
+DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter.parquet,DoS attacks-Hulk,145199
+DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter.parquet,DoS attacks-SlowHTTPTest,55
+Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,400424
+Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet,Infilteration,56449
+Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet,Benign,187136
+Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet,Infilteration,62034
+Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,829883
+Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet,Brute Force -Web,228
+Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet,Brute Force -XSS,79
+Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet,SQL Injection,34
+Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet,Benign,828864
+Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet,Brute Force -Web,340
+Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet,Brute Force -XSS,150
+Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet,SQL Injection,51

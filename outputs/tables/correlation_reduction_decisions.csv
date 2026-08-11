@@ -1,0 +1,26 @@
+feature_1,feature_2,absolute_correlation,retained_feature,removed_feature,decision_basis
+Total Fwd Packets,Subflow Fwd Packets,1.0,Subflow Fwd Packets,Total Fwd Packets,Better combined feature-selection rank
+Total Backward Packets,Subflow Bwd Packets,1.0,Subflow Bwd Packets,Total Backward Packets,Better combined feature-selection rank
+Fwd Packets Length Total,Subflow Fwd Bytes,1.0,Subflow Fwd Bytes,Fwd Packets Length Total,Better combined feature-selection rank
+Bwd Packet Length Mean,Avg Bwd Segment Size,1.0,Avg Bwd Segment Size,Bwd Packet Length Mean,Better combined feature-selection rank
+RST Flag Count,ECE Flag Count,1.0,RST Flag Count,ECE Flag Count,Better combined feature-selection rank
+Fwd URG Flags,CWE Flag Count,1.0,Fwd URG Flags,CWE Flag Count,Better combined feature-selection rank
+Fwd PSH Flags,SYN Flag Count,1.0,Fwd PSH Flags,SYN Flag Count,Better combined feature-selection rank
+Bwd Packets Length Total,Subflow Bwd Bytes,1.0,Bwd Packets Length Total,Subflow Bwd Bytes,Better combined feature-selection rank
+Fwd Packet Length Mean,Avg Fwd Segment Size,1.0,Avg Fwd Segment Size,Fwd Packet Length Mean,Better combined feature-selection rank
+Subflow Fwd Packets,Fwd Act Data Packets,0.999741255279983,Subflow Fwd Packets,Fwd Act Data Packets,Better combined feature-selection rank
+Bwd Header Length,Subflow Bwd Packets,0.9997020475788088,Bwd Header Length,Subflow Bwd Packets,Better combined feature-selection rank
+Fwd Header Length,Subflow Fwd Packets,0.9990939547166838,Fwd Header Length,Subflow Fwd Packets,Better combined feature-selection rank
+Bwd Packets Length Total,Bwd Header Length,0.9969912521152554,Bwd Packets Length Total,Bwd Header Length,Better combined feature-selection rank
+Fwd Header Length,Subflow Fwd Bytes,0.9967992100440697,Subflow Fwd Bytes,Fwd Header Length,Better combined feature-selection rank
+Flow Duration,Fwd IAT Total,0.9957229033275027,Flow Duration,Fwd IAT Total,Better combined feature-selection rank
+Packet Length Mean,Avg Packet Size,0.9939848256355774,Packet Length Mean,Avg Packet Size,Better combined feature-selection rank
+Idle Mean,Idle Min,0.993714093424507,Idle Mean,Idle Min,Better combined feature-selection rank
+Flow IAT Max,Fwd IAT Max,0.9903207619229709,Flow IAT Max,Fwd IAT Max,Better combined feature-selection rank
+Fwd IAT Mean,Fwd IAT Min,0.9887015701235851,Fwd IAT Min,Fwd IAT Mean,Better combined feature-selection rank
+Idle Mean,Idle Max,0.9881288848462086,Idle Mean,Idle Max,Better combined feature-selection rank
+Flow IAT Mean,Flow IAT Min,0.977585173595594,Flow IAT Mean,Flow IAT Min,Better combined feature-selection rank
+Flow Packets/s,Fwd Packets/s,0.9706037093901944,Fwd Packets/s,Flow Packets/s,Better combined feature-selection rank
+Fwd Packet Length Min,Packet Length Min,0.963695658474156,Packet Length Min,Fwd Packet Length Min,Better combined feature-selection rank
+Flow IAT Mean,Fwd IAT Min,0.9598055266829402,Flow IAT Mean,Fwd IAT Min,Better combined feature-selection rank
+Packet Length Max,Packet Length Std,0.9555864853004348,Packet Length Max,Packet Length Std,Better combined feature-selection rank

@@ -1,0 +1,11 @@
+file_name,rows,columns,missing_values,positive_infinity,negative_infinity,total_infinity,duplicates_within_file,unique_labels,processing_seconds,status,error
+Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet,771587,78,0,0,0,0,0,2,8.7,Completed,
+Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter.parquet,619346,78,0,0,0,0,0,3,8.32,Completed,
+DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet,954846,78,0,0,0,0,0,2,10.81,Completed,
+DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet,561396,78,0,0,0,0,0,3,4.13,Completed,
+DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter.parquet,794812,78,0,0,0,0,0,3,7.85,Completed,
+DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter.parquet,591873,78,0,0,0,0,0,3,4.93,Completed,
+Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet,456873,78,0,0,0,0,0,2,4.29,Completed,
+Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet,249170,78,0,0,0,0,0,2,2.19,Completed,
+Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet,830224,78,0,0,0,0,0,4,8.65,Completed,
+Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet,829405,78,0,0,0,0,0,4,8.39,Completed,

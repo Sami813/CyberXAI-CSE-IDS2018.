@@ -1,0 +1,43 @@
+{
+    "selected_feature_set": "top_20",
+    "number_of_features": 20,
+    "features": [
+        "Fwd Packet Length Max",
+        "Init Bwd Win Bytes",
+        "Fwd Packet Length Std",
+        "Avg Fwd Segment Size",
+        "Init Fwd Win Bytes",
+        "Fwd Seg Size Min",
+        "Flow Duration",
+        "Flow IAT Max",
+        "Packet Length Variance",
+        "Subflow Fwd Bytes",
+        "Flow IAT Mean",
+        "Packet Length Mean",
+        "Packet Length Max",
+        "Avg Bwd Segment Size",
+        "Fwd IAT Std",
+        "Bwd Packet Length Std",
+        "Bwd Packet Length Max",
+        "Bwd Packets Length Total",
+        "Bwd IAT Min",
+        "RST Flag Count"
+    ],
+    "records_used": 500000,
+    "development_records": 400000,
+    "validation_records": 100000,
+    "models_compared": [
+        "Logistic Regression",
+        "Decision Tree",
+        "Random Forest",
+        "XGBoost"
+    ],
+    "leading_baseline_model": "Random Forest",
+    "models_selected_for_tuning": [
+        "Random Forest",
+        "XGBoost"
+    ],
+    "selection_basis": "Malicious-class F1-score followed by recall, precision, false-positive errors and efficiency",
+    "final_test_set_used": false,
+    "random_seed": 42
+}

@@ -1,0 +1,9 @@
+file_name,purpose,recommended_visual
+model_summary.csv,One-row summary of final model performance,Summary cards
+model_metrics.csv,Final evaluation metrics in long format,Cards or clustered column chart
+confusion_matrix.csv,"True-positive, true-negative and error counts",Matrix or stacked column chart
+performance_by_test_file.csv,Performance variation across source test files,Table and line or column chart
+performance_by_attack_label.csv,Detection rates for individual attack categories,Horizontal bar chart
+feature_importance.csv,"Native, permutation and SHAP importance",Ranked horizontal bar chart
+errors_by_attack_label.csv,False-positive and false-negative distribution,Stacked bar chart
+errors_by_confidence_band.csv,Model errors grouped by prediction confidence,Stacked column chart

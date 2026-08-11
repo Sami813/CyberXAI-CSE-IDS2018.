@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "844d8d43cec55180198d",
+  "position": {
+    "x": 1390.7440800828442,
+    "y": 291.03762512944422,
+    "z": 0,
+    "height": 12.473041076976182,
+    "width": 12.473041076976182,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "treemap",
+    "drillFilterOtherVisuals": true
+  }
+}

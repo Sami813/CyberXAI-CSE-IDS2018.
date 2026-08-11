@@ -1,0 +1,21 @@
+CyberXAI Presentation Live V8
+
+OPEN ONLY:
+    CyberXAI_PRESENTATION_LIVE_V8.pbip
+
+V8 fixes the visual problem differently:
+- Approved mockup images are kept COMPLETELY UNTOUCHED.
+- No icon or label is cut out of the mockup.
+- Page size is exactly the mockup's native 1672 x 941.
+- Only the original numeric text is covered with very small native patches.
+- Live Power BI values are placed over those small patches.
+- Live charts sit only inside the chart plot regions.
+
+For visual comparison/presentation:
+1. Open Power BI.
+2. Collapse the Filters, Visualizations and Data panes on the right.
+3. Use View -> Fit to page / Fit to width.
+This is necessary because the editor screenshot at 50-53% zoom makes any dashboard look much smaller than the original mockup.
+
+Expected data folder:
+    D:\Sami Data Set\powerbi\

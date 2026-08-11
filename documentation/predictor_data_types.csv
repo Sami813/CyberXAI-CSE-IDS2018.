@@ -1,0 +1,78 @@
+feature,parquet_type
+Protocol,int8
+Flow Duration,int32
+Total Fwd Packets,int32
+Total Backward Packets,int32
+Fwd Packets Length Total,int32
+Bwd Packets Length Total,float
+Fwd Packet Length Max,int16
+Fwd Packet Length Min,int16
+Fwd Packet Length Mean,float
+Fwd Packet Length Std,float
+Bwd Packet Length Max,int16
+Bwd Packet Length Min,int16
+Bwd Packet Length Mean,float
+Bwd Packet Length Std,float
+Flow Bytes/s,double
+Flow Packets/s,double
+Flow IAT Mean,float
+Flow IAT Std,float
+Flow IAT Max,float
+Flow IAT Min,float
+Fwd IAT Total,float
+Fwd IAT Mean,float
+Fwd IAT Std,float
+Fwd IAT Max,float
+Fwd IAT Min,float
+Bwd IAT Total,float
+Bwd IAT Mean,float
+Bwd IAT Std,float
+Bwd IAT Max,float
+Bwd IAT Min,float
+Fwd PSH Flags,int8
+Bwd PSH Flags,int8
+Fwd URG Flags,int8
+Bwd URG Flags,int8
+Fwd Header Length,int32
+Bwd Header Length,int32
+Fwd Packets/s,float
+Bwd Packets/s,float
+Packet Length Min,int16
+Packet Length Max,int16
+Packet Length Mean,float
+Packet Length Std,float
+Packet Length Variance,float
+FIN Flag Count,int8
+SYN Flag Count,int8
+RST Flag Count,int8
+PSH Flag Count,int8
+ACK Flag Count,int8
+URG Flag Count,int8
+CWE Flag Count,int8
+ECE Flag Count,int8
+Down/Up Ratio,int16
+Avg Packet Size,float
+Avg Fwd Segment Size,float
+Avg Bwd Segment Size,float
+Fwd Avg Bytes/Bulk,int8
+Fwd Avg Packets/Bulk,int8
+Fwd Avg Bulk Rate,int8
+Bwd Avg Bytes/Bulk,int8
+Bwd Avg Packets/Bulk,int8
+Bwd Avg Bulk Rate,int8
+Subflow Fwd Packets,int32
+Subflow Fwd Bytes,int32
+Subflow Bwd Packets,int32
+Subflow Bwd Bytes,int32
+Init Fwd Win Bytes,int32
+Init Bwd Win Bytes,int32
+Fwd Act Data Packets,int16
+Fwd Seg Size Min,int8
+Active Mean,float
+Active Std,float
+Active Max,float
+Active Min,float
+Idle Mean,float
+Idle Std,float
+Idle Max,float
+Idle Min,float

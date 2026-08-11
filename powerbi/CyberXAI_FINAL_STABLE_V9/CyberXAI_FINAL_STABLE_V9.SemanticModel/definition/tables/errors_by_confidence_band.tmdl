@@ -1,0 +1,48 @@
+table errors_by_confidence_band
+	lineageTag: 5088b9a6-aa35-45b6-aecb-a725b1e55db4
+
+	measure 'Confidence FN Errors' = CALCULATE(SUM(errors_by_confidence_band[error_count]), errors_by_confidence_band[error_type] = "False Negative")
+		formatString: #,0
+		lineageTag: fb6f387b-bbc5-45f0-bb89-267a1c995090
+
+	measure 'Confidence FP Errors' = CALCULATE(SUM(errors_by_confidence_band[error_count]), errors_by_confidence_band[error_type] = "False Positive")
+		formatString: #,0
+		lineageTag: 038098aa-2b7e-4bf7-be72-1b842698af93
+
+	column error_type
+		dataType: string
+		lineageTag: fea1664c-cde4-494d-8a53-4e66046f21e9
+		summarizeBy: none
+		sourceColumn: error_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column confidence_band
+		dataType: string
+		lineageTag: eb3032e9-1392-4e2a-bcd4-01546c2c5ff5
+		summarizeBy: none
+		sourceColumn: confidence_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_count
+		dataType: int64
+		formatString: 0
+		lineageTag: ec581d85-c78c-4c3e-9ad9-f9fe771b5ae3
+		summarizeBy: sum
+		sourceColumn: error_count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition errors_by_confidence_band = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Sami Data Set\powerbi\errors_by_confidence_band.csv"),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"error_type", type text}, {"confidence_band", type text}, {"error_count", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
