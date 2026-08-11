@@ -307,8 +307,8 @@ MSc Masters Project — 2025/26
 |-|-|
 |Sami Ullah|Cyber Threat Pattern and Class Imbalance Analytics|
 |Asad Waseem|Feature Selection and Network Flow Feature Analysis|
-|Student 3 — name to insert|Comparative Machine-Learning-Based Threat Classification|
-|Student 4 — name to insert|Explainability and Dashboard-Based Cybersecurity Threat Interpretation|
+|Hamad Ullah|Comparative Machine-Learning-Based Threat Classification|
+|Monu|Explainability and Dashboard-Based Cybersecurity Threat Interpretation|
 
 \---
 
