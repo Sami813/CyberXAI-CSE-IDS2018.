@@ -1,15 +1,61 @@
 # How to Run the CyberXAI Power BI Dashboard
 
-This file explains how to open and refresh the Power BI dashboard included in the **CyberXAI-CSE-CIC-IDS2018** repository.
+## Dashboard File
 
-## Dashboard Version
-
-Use the final stable dashboard version:
+Open the following Power BI project file from the downloaded repository:
 
 ```text
-powerbi/
-└── CyberXAI\_FINAL\_STABLE\_V9/
-    └── CyberXAI\_FINAL\_STABLE\_V9.pbip
+powerbi/CyberXAI\_FINAL\_STABLE\_V9/CyberXAI\_FINAL\_STABLE\_V9.pbip
+```
+
+The `CyberXAI\_FINAL\_STABLE\_V9` folder already contains the dashboard input CSV files required for the final report, including:
+
+```text
+confusion\_matrix.csv
+errors\_by\_attack\_label.csv
+errors\_by\_confidence\_band.csv
+feature\_importance.csv
+model\_metrics.csv
+model\_summary.csv
+performance\_by\_attack\_label.csv
+performance\_by\_test\_file.csv
+powerbi\_data\_dictionary.csv
+```
+
+You do **not** need to create or copy these CSV files separately.
+
+\---
+
+## Software Required
+
+Install **Microsoft Power BI Desktop** on Windows.
+
+Python and Jupyter are only required if you want to reproduce the machine-learning analysis. They are not required simply to open and inspect the final dashboard.
+
+\---
+
+## Step 1 — Download the Repository
+
+Download or clone:
+
+```text
+https://github.com/Sami813/CyberXAI-CSE-IDS2018
+```
+
+If using GitHub ZIP:
+
+1. Download the repository ZIP.
+2. Extract it to any folder on the computer.
+3. Keep the original folder structure unchanged.
+
+\---
+
+## Step 2 — Open the Dashboard
+
+Navigate to:
+
+```text
+powerbi/CyberXAI\_FINAL\_STABLE\_V9/
 ```
 
 Open:
@@ -18,304 +64,139 @@ Open:
 CyberXAI\_FINAL\_STABLE\_V9.pbip
 ```
 
-Do not use older dashboard versions if the final V9 project is available.
+Power BI Desktop should open the report and semantic model.
 
 \---
 
-## Requirements
+## Step 3 — If the Dashboard Opens Normally
 
-Install **Microsoft Power BI Desktop** on Windows.
+If all visuals load correctly:
 
-The dashboard is stored as a **Power BI Project (`.pbip`)** rather than a single `.pbix` file.
-
-If Power BI Desktop does not open the project correctly, check:
-
-```text
-File
-→ Options and settings
-→ Options
-→ Preview features
-```
-
-and enable the Power BI Project / PBIP option if required by your installed version.
-
-The report also uses the Power BI enhanced report definition format (PBIR). If your Power BI version asks to enable the enhanced report format, enable it under the same Preview Features section.
-
-Restart Power BI Desktop after changing preview-feature settings.
+1. Select **Home → Refresh**.
+2. Confirm that the dashboard values appear normally.
+3. No data-source changes are required.
 
 \---
 
-## Step 1 — Download or Clone the Repository
+## Step 4 — If Power BI Shows a Data Source / File Path Error
 
-Repository:
-
-```text
-https://github.com/Sami813/CyberXAI-CSE-IDS2018
-```
-
-You can either clone it with GitHub Desktop or download the repository as a ZIP file.
-
-After downloading, keep the complete Power BI folder structure together.
-
-\---
-
-## Step 2 — Locate the Dashboard
-
-Navigate to:
-
-```text
-CyberXAI-CSE-IDS2018
-└── powerbi
-    └── CyberXAI\_FINAL\_STABLE\_V9
-```
-
-Inside this folder, locate:
-
-```text
-CyberXAI\_FINAL\_STABLE\_V9.pbip
-```
-
-Double-click this file to open the dashboard in Power BI Desktop.
-
-\---
-
-## Step 3 — Required CSV Files
-
-The dashboard uses the following analytical result files:
-
-```text
-confusion\_matrix.csv
-errors\_by\_attack\_label.csv
-errors\_by\_confidence\_band.csv
-feature\_importance.csv
-model\_metrics.csv
-model\_summary.csv
-performance\_by\_attack\_label.csv
-performance\_by\_test\_file.csv
-```
-
-These files are included with the final Power BI project.
-
-They contain the final analytical outputs used by the dashboard.
-
-\---
-
-## Step 4 — Important: Data Source Path
-
-The current semantic model was originally developed using the local source folder:
+The Power BI semantic model was originally developed on a different computer and may still contain an absolute source path such as:
 
 ```text
 D:\\Sami Data Set\\powerbi\\
 ```
 
-Because this is an absolute Windows path, another computer may display a data-source error after opening the project.
+On another computer, this path may not exist.
 
-### If the dashboard opens normally
+If Power BI cannot locate the CSV files:
 
-No change is required. Click:
+1. Open the `.pbip` project.
+2. Go to **Home → Transform data**.
+3. Open **Data source settings**.
+4. Select the affected CSV/file source.
+5. Choose **Change Source**.
+6. Point Power BI to the local folder:
 
 ```text
-Home → Refresh
+<YOUR\_EXTRACTED\_REPOSITORY>\\powerbi\\CyberXAI\_FINAL\_STABLE\_V9\\
 ```
 
-and verify that the visuals load correctly.
+7. Select the corresponding CSV file if Power BI asks for an individual file.
+8. Repeat only for sources that show an error.
+9. Choose **Close \& Apply**.
+10. Select **Home → Refresh**.
 
-### If Power BI reports that a CSV file cannot be found
+You are only correcting the local file path. Do not replace, edit, or recreate the analytical CSV files.
 
-Update the file locations to the folder on your own computer.
+\---
 
-In Power BI Desktop:
+## Step 5 — Verify the Main Results
+
+The final dashboard should remain consistent with the authoritative Python outputs.
+
+Expected final model values include:
 
 ```text
-Home
-→ Transform data
-→ Data source settings
+Test records:              1,331,907
+Accuracy:                  98.00%
+Malicious precision:       97.92%
+Malicious recall:          91.96%
+Malicious F1-score:        94.85%
+ROC-AUC:                   98.82%
+Average precision:         97.46%
+
+True negatives:            1,060,600
+False positives:           5,202
+False negatives:           21,386
+True positives:            244,719
 ```
 
-Select the relevant CSV source and choose:
+The main attack-level limitation should also remain visible:
 
 ```text
-Change Source
-```
-
-Then browse to the final dashboard folder in your cloned repository, for example:
-
-```text
-C:\\Users\\<YOUR-USERNAME>\\Desktop\\CyberXAI-CSE-IDS2018\\
-powerbi\\CyberXAI\_FINAL\_STABLE\_V9\\
-```
-
-Repeat this for the required CSV files if Power BI asks for each source individually.
-
-After updating the paths, select:
-
-```text
-Close \& Apply
-```
-
-and then:
-
-```text
-Home → Refresh
+Infilteration test records:      23,697
+Infilteration false negatives:   21,161
+Infilteration detection rate:    10.70%
 ```
 
 \---
 
-## Step 5 — Verify the Dashboard
+## Important Note About the Dashboard
 
-The final stable V9 project contains presentation/report pages and a live analytics page.
+Power BI is used as the **reporting and visual communication layer**.
 
-Check that the report opens without missing-data errors and that the model outputs agree with the final experiment files.
+The machine-learning analysis, predictions, SHAP calculations, evaluation metrics, and error-analysis outputs were produced in Python.
 
-Key final-test values include:
-
-|Metric|Value|
-|-|-:|
-|Accuracy|98.00%|
-|Precision (malicious)|97.92%|
-|Recall (malicious)|91.96%|
-|F1-score (malicious)|94.85%|
-|ROC-AUC|98.82%|
-|False Positives|5,202|
-|False Negatives|21,386|
-|True Positives|244,719|
-|True Negatives|1,060,600|
-
-A major attack-level finding is that **21,161 of the 21,386 false negatives are Infilteration records**.
-
-If a dashboard screenshot or old static resource disagrees with the final CSV/JSON outputs, treat the final analytical CSV/JSON files as the authoritative result source.
+The CSV/JSON analytical outputs are therefore the authoritative evidence. Power BI presents those results visually and should be refreshed whenever the underlying analytical files change.
 
 \---
 
-## Step 6 — Main Dashboard Evidence Files
+## Raw Dataset Requirement
 
-The Power BI semantic model uses the following files for its main analytical views:
+The ten raw CSE-CIC-IDS2018 parquet files are **not required simply to open and inspect the final Power BI dashboard** because the final dashboard CSV files are already included in the V9 Power BI folder.
 
-### Model performance
-
-```text
-model\_metrics.csv
-model\_summary.csv
-confusion\_matrix.csv
-```
-
-### Attack-level analysis
-
-```text
-errors\_by\_attack\_label.csv
-performance\_by\_attack\_label.csv
-performance\_by\_test\_file.csv
-```
-
-### Error confidence analysis
-
-```text
-errors\_by\_confidence\_band.csv
-```
-
-### Explainability
-
-```text
-feature\_importance.csv
-```
+The raw parquet files are required only if a user wants to reproduce the complete Python/Jupyter workflow from the beginning.
 
 \---
 
-## Troubleshooting
+## Recommended Folder Structure
 
-### The `.pbip` file does not open
-
-Update Power BI Desktop to a current version and check the Power BI Project/PBIP preview setting under:
+Keep the project structure similar to:
 
 ```text
-File → Options and settings → Options → Preview features
-```
-
-\---
-
-### Power BI says a CSV file cannot be found
-
-The project currently contains absolute source paths from the development machine.
-
-Update them through:
-
-```text
-Transform data → Data source settings → Change Source
-```
-
-and point them to the CSV files inside:
-
-```text
-powerbi/CyberXAI\_FINAL\_STABLE\_V9/
-```
-
-\---
-
-### The dashboard opens but contains blank visuals
-
-Run:
-
-```text
-Home → Refresh
-```
-
-If the refresh fails, check the CSV source paths.
-
-\---
-
-### A screenshot shows different values from the CSV files
-
-Use the **final CSV/JSON analytical outputs** as the source of record.
-
-The project archive contains material from more than one dashboard iteration, so old static screenshots should not override the frozen experiment outputs.
-
-\---
-
-## Recommended Repository Structure
-
-```text
-CyberXAI-CSE-CIC-IDS2018/
-│
-├── README.md
-├── HOW\_TO\_RUN\_DASHBOARD.md
-│
+CyberXAI-CSE-IDS2018/
+├── data/
+│   └── raw/
 ├── notebooks/
-├── documentation/
-├── outputs/
-├── models/
-│
-└── powerbi/
-    └── CyberXAI\_FINAL\_STABLE\_V9/
-        ├── CyberXAI\_FINAL\_STABLE\_V9.pbip
-        ├── CyberXAI\_FINAL\_STABLE\_V9.Report/
-        ├── CyberXAI\_FINAL\_STABLE\_V9.SemanticModel/
-        ├── confusion\_matrix.csv
-        ├── errors\_by\_attack\_label.csv
-        ├── errors\_by\_confidence\_band.csv
-        ├── feature\_importance.csv
-        ├── model\_metrics.csv
-        ├── model\_summary.csv
-        ├── performance\_by\_attack\_label.csv
-        └── performance\_by\_test\_file.csv
+├── powerbi/
+│   └── CyberXAI\_FINAL\_STABLE\_V9/
+│       ├── CyberXAI\_FINAL\_STABLE\_V9.pbip
+│       ├── CyberXAI\_FINAL\_STABLE\_V9.Report/
+│       ├── CyberXAI\_FINAL\_STABLE\_V9.SemanticModel/
+│       ├── confusion\_matrix.csv
+│       ├── errors\_by\_attack\_label.csv
+│       ├── errors\_by\_confidence\_band.csv
+│       ├── feature\_importance.csv
+│       ├── model\_metrics.csv
+│       ├── model\_summary.csv
+│       ├── performance\_by\_attack\_label.csv
+│       ├── performance\_by\_test\_file.csv
+│       └── powerbi\_data\_dictionary.csv
+├── requirements.txt
+└── README.md
 ```
 
 \---
 
-## Notes
-
-* The dashboard is intended as a reporting and interpretation layer.
-* The machine-learning metrics are generated in Python first.
-* Power BI imports the saved analytical results rather than independently recalculating the final machine-learning experiment.
-* Keep the `.pbip`, `.Report`, and `.SemanticModel` components together because they form one Power BI project.
-* Large raw CSE-CIC-IDS2018 dataset files are not required simply to view the final dashboard if the final analytical CSV files are available.
-
-\---
-
-## Project Repository
-
-**CyberXAI-CSE-CIC-IDS2018**
+## Quick Summary for a New User
 
 ```text
-https://github.com/Sami813/CyberXAI-CSE-IDS2018
+1. Download and extract the repository.
+2. Install Power BI Desktop.
+3. Open powerbi/CyberXAI\_FINAL\_STABLE\_V9/CyberXAI\_FINAL\_STABLE\_V9.pbip.
+4. If it opens normally, click Refresh.
+5. If a path error appears, change the source path to the local V9 folder.
+6. Close \& Apply, then Refresh.
+7. Verify the final metrics shown above.
 ```
 
